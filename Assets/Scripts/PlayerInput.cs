@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
     {
         float HorizontalInput = Input.GetAxis("Horizontal");
 
+        // Calls playermovement 
         if (HorizontalInput != 0.0f)
         {
             if (playerMovementScript != null)

@@ -19,6 +19,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // Move the player depending on input
     public void HorizontalMovement(float HorizontalInput)
     {
         Vector2 ForceToAdd = Vector2.right * HorizontalInput * playerAcceleration * Time.deltaTime;

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 
-public class EnemyMoveForward : MonoBehaviour {
-
+public class EnemyMoveForward : MonoBehaviour
+{
     private float acceleration = 75f;
 
     private float initialVelocity = 2f;
@@ -17,7 +18,6 @@ public class EnemyMoveForward : MonoBehaviour {
         rb.velocity = Vector2.down * initialVelocity;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;

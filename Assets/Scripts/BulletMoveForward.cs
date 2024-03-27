@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletMoveForward : MonoBehaviour {
+public class BulletMoveForward : MonoBehaviour
+{
 
-    private float acceleration = 50f;
+    private float acceleration = 200f;
 
     private float initialVelocity = 5f;
 
     private Rigidbody2D rb;
+
+  
 
     // Use this for initialization
     void Start()
