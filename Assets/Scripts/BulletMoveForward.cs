@@ -4,9 +4,9 @@ using System.Collections;
 public class BulletMoveForward : MonoBehaviour
 {
 
-    private float acceleration = 200f;
+    private float bulletAcceleration = 200f;
 
-    private float initialVelocity = 5f;
+    private float bulletInitialVelocity = 5f;
 
     private Rigidbody2D rb;
 
@@ -17,13 +17,13 @@ public class BulletMoveForward : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.velocity = Vector2.up * initialVelocity;
+        rb.velocity = Vector2.up * bulletInitialVelocity;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 ForceToAdd = Vector2.up * acceleration * Time.deltaTime;
+        Vector2 ForceToAdd = Vector2.up * bulletAcceleration * Time.deltaTime;
 
         rb.AddForce(ForceToAdd);
     }
