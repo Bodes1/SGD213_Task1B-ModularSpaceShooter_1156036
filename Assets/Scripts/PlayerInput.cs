@@ -8,6 +8,8 @@ public class PlayerInput : MonoBehaviour
     private ShootingScript shootingScript;
     private Movement move;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,14 @@ public class PlayerInput : MonoBehaviour
     {
         float HorizontalInput = Input.GetAxis("Horizontal");
 
+        Vector2 direction = new Vector2(HorizontalInput, 0);
+
         // Calls playermovement 
         if (HorizontalInput != 0.0f)
         {
             if (playerMovementScript != null)
             {
-                playerMovementScript.HorizontalMovement(HorizontalInput);
+                move.ObjectMovement(HorizontalInput, direction);
             }
             else
             {

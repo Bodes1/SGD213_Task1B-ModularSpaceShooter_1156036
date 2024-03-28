@@ -7,7 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     // It is "pseudo public"
     // HorizontalPlayerAcceleration indicates how fast we accelerate Horizontally
     [SerializeField]
-    private float playerAcceleration = 5000f;
+    private float acceleration = 5000f;
 
     private Rigidbody2D rb;
     
@@ -22,7 +22,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Move the player depending on input
     public void HorizontalMovement(float HorizontalInput)
     {
-        Vector2 ForceToAdd = Vector2.right * HorizontalInput * playerAcceleration * Time.deltaTime;
+        Vector2 ForceToAdd = Vector2.right * HorizontalInput * acceleration * Time.deltaTime;
         rb.AddForce(ForceToAdd);
     }
 }
