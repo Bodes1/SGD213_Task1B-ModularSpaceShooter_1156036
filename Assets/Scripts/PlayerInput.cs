@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerMovementScript playerMovementScript;
     private ShootingScript shootingScript;
     private Movement move;
 
@@ -13,7 +12,6 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMovementScript = GetComponent<PlayerMovementScript>();
         shootingScript = GetComponent<ShootingScript>();
         move = GetComponent<Movement>();
     }
@@ -27,11 +25,12 @@ public class PlayerInput : MonoBehaviour
         // Turn input into direction
         Vector2 direction = new Vector2(HorizontalInput, 0);
 
-        // Calls playermovement 
+         
         if (HorizontalInput != 0.0f)
         {
             if (move != null)
             {
+                // Calls Movement script
                 move.ObjectMovement(direction, acceleration);
             }
             else
