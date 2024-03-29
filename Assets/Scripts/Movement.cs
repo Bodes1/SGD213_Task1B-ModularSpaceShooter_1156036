@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    private float acceleration = 5000f;
-
     private Rigidbody2D rb;
 
     private void Start()
@@ -14,10 +11,13 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void ObjectMovement(float HorizontalInput, Vector2 direction)
+    public void ObjectMovement(Vector2 direction, float acceleration)
     {
-        Vector2 ForceToAdd = Vector2.right * HorizontalInput * acceleration * Time.deltaTime;
-        rb.AddForce(ForceToAdd);
+        Vector2 movement = direction * acceleration * Time.deltaTime;
+        rb.AddForce(movement);
+
+        //Vector2 ForceToAdd = Vector2.right * HorizontalInput * acceleration * Time.deltaTime;
+        //rb.AddForce(ForceToAdd);
     }
 
     private void Update()

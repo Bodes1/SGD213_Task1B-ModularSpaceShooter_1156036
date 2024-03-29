@@ -4,7 +4,9 @@ using UnityEditor.Experimental.GraphView;
 
 public class EnemyMoveForward : MonoBehaviour
 {
-    private float rockAceleration = 75f;
+    private Movement move;
+
+    private float acceleration = 75f;
 
     private float rockInitialVelocity = 2f;
 
@@ -15,13 +17,19 @@ public class EnemyMoveForward : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.velocity = Vector2.down * rockInitialVelocity;
+        move = GetComponent<Movement>();
+
+        rb.velocity = Vector2.down * rockInitialVelocity;        
     }
 
     void Update()
     {
-        Vector2 RockForceToAdd = Vector2.down * rockAceleration * Time.deltaTime;
+        Vector2 direction = new Vector2(0, -1);
 
-        rb.AddForce(RockForceToAdd);
+        move.ObjectMovement(direction, acceleration);
+
+        //Vector2 RockForceToAdd = Vector2.down * acceleration * Time.deltaTime;
+
+        //rb.AddForce(RockForceToAdd);
     }
 }
